@@ -3,22 +3,24 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Full Stack Capstone Project",
-    description: "A full stack web application built as part of the IBM Full Stack Developer Professional Certificate. Features user authentication, RESTful APIs, and cloud deployment.",
-    tags: ["React", "Node.js", "Express", "IBM Cloud"],
-    github: "https://github.com/youssefwerrad",
+    title: "DealerRate",
+    description: "A full-stack car dealership review platform where buyers can discover, research, and review dealerships. Features automatic sentiment analysis, real-time search, async reviews, helpful voting, and a dual-role user system (consumers & dealers).",
+    tags: ["Django", "Python", "JavaScript", "SQLite"],
+    github: "https://github.com/youssefwerrad/Dealer_Rate",
+    link: "https://dealer-rate.onrender.com/",
   },
   {
-    title: "CS50 Web — Social Network",
-    description: "A Twitter-like social network application built with Django and JavaScript. Supports posts, likes, following, and pagination.",
-    tags: ["Django", "Python", "JavaScript", "SQL"],
-    github: "https://github.com/youssefwerrad",
+    title: "Paradise Nursery — Plant Shop",
+    description: "A responsive e-commerce app for online plant shopping built with React and Redux Toolkit. Features real-time cart management, product categorization, quantity controls, and an admin panel for inventory management.",
+    tags: ["React", "Redux Toolkit", "Vite", "JavaScript", "CSS3"],
+    github: "https://github.com/youssefwerrad/e-plantShopping",
+    link: "https://youssefwerrad.github.io/e-plantShopping/",
   },
   {
-    title: "CS50 Web — E-Commerce",
-    description: "An eBay-like auction site with listings, bidding, watchlists, and categories, built with Django and SQLite.",
-    tags: ["Django", "Python", "HTML5", "CSS3"],
-    github: "https://github.com/youssefwerrad",
+    title: "Folio — Book Search",
+    description: "A full-stack book search app built with Express.js and React, powered by the Open Library API. Search by title, author, or genre with pagination, book detail modals, and star ratings.",
+    tags: ["React", "Node.js", "Express.js", "Open Library API", "Vite"],
+    github: "https://github.com/youssefwerrad/folio-book-search",
   },
   {
     title: "Back-End API with Node.js",
