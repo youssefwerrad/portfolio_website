@@ -105,41 +105,35 @@ export const ProjectsSection = () => (
 
         {/* DealerRate — spans both columns */}
         <div className="md:col-span-2">
-          <ScrollReveal delay={0}>
-            <ScreenshotCard
-              screens={DR_SCREENS}
-              title="DealerRate"
-              badge="Featured"
-              description="A full-stack car dealership review platform — buyers discover, research, and review dealerships with automatic sentiment analysis, real-time search, async reviews, helpful voting, and a dual-role user system for consumers and dealers."
-              tags={["Django", "Python", "JavaScript", "SQLite"]}
-              github="https://github.com/youssefwerrad/Dealer_Rate"
-              link="https://dealer-rate.onrender.com/"
-            />
-          </ScrollReveal>
+          <ScreenshotCard
+            screens={DR_SCREENS}
+            title="DealerRate"
+            badge="Featured"
+            description="A full-stack car dealership review platform — buyers discover, research, and review dealerships with automatic sentiment analysis, real-time search, async reviews, helpful voting, and a dual-role user system for consumers and dealers."
+            tags={["Django", "Python", "JavaScript", "SQLite"]}
+            github="https://github.com/youssefwerrad/Dealer_Rate"
+            link="https://dealer-rate.onrender.com/"
+          />
         </div>
 
         {/* Paradise Nursery */}
-        <ScrollReveal delay={0.08} className="flex flex-col">
-          <ScreenshotCard
-            screens={PLANT_SCREENS}
-            title="Paradise Nursery"
-            description="A responsive e-commerce app for online plant shopping built with React and Redux Toolkit. Features real-time cart management, product categorization, quantity controls, and an admin panel for inventory management."
-            tags={["React", "Redux Toolkit", "Vite", "JavaScript", "CSS3"]}
-            github="https://github.com/youssefwerrad/e-plantShopping"
-            link="https://youssefwerrad.github.io/e-plantShopping/"
-          />
-        </ScrollReveal>
+        <ScreenshotCard
+          screens={PLANT_SCREENS}
+          title="Paradise Nursery"
+          description="A responsive e-commerce app for online plant shopping built with React and Redux Toolkit. Features real-time cart management, product categorization, quantity controls, and an admin panel for inventory management."
+          tags={["React", "Redux Toolkit", "Vite", "JavaScript", "CSS3"]}
+          github="https://github.com/youssefwerrad/e-plantShopping"
+          link="https://youssefwerrad.github.io/e-plantShopping/"
+        />
 
         {/* Book Nook Finder */}
-        <ScrollReveal delay={0.16} className="flex flex-col">
-          <ScreenshotCard
-            screens={BOOK_SCREENS}
-            title="Book Nook Finder"
-            description="A React + Express full-stack app for searching millions of books via the Open Library API. Features title, author and genre search, trending discovery, paginated results, and a rich book detail modal."
-            tags={["React", "JavaScript", "Express.js", "Open Library API", "Vite"]}
-            github="https://github.com/youssefwerrad/book-nook-finder.git"
-          />
-        </ScrollReveal>
+        <ScreenshotCard
+          screens={BOOK_SCREENS}
+          title="Book Nook Finder"
+          description="A React + Express full-stack app for searching millions of books via the Open Library API. Features title, author and genre search, trending discovery, paginated results, and a rich book detail modal."
+          tags={["React", "JavaScript", "Express.js", "Open Library API", "Vite"]}
+          github="https://github.com/youssefwerrad/book-nook-finder.git"
+        />
 
       </div>
     </div>
