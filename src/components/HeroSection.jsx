@@ -53,7 +53,7 @@ export const HeroSection = () => {
             <ArrowDown size={16} />
           </a>
           <a
-            href="public/resume.pdf"
+            href="/resume.pdf"
             download
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border text-foreground font-medium text-sm hover:bg-secondary transition-[background-color,transform] duration-200 active:scale-[0.97]"
           >
