@@ -20,11 +20,11 @@ const BOOK_SCREENS = [
   { label: "Detail",   img: "/screenshots/book_modal.webp",   alt: "Bookwise book detail modal" },
 ];
 
-function ScreenshotCard({ screens, title, badge, description, tags, github, link, featured = false }) {
+function ScreenshotCard({ screens, title, badge, description, tags, github, link }) {
   const [active, setActive] = useState(0);
   return (
-    <div className={`group relative rounded-xl border border-border bg-card overflow-hidden transition-[box-shadow] duration-300 hover:shadow-lg hover:shadow-foreground/5 flex flex-col${featured ? " md:col-span-2" : ""}`}>
-      <div className="relative border-b border-border overflow-hidden" style={{ height: featured ? "260px" : "220px" }}>
+    <div className="group relative rounded-xl border border-border bg-card overflow-hidden transition-[box-shadow] duration-300 hover:shadow-lg hover:shadow-foreground/5 flex flex-col h-full">
+      <div className="relative border-b border-border overflow-hidden h-52">
         <div className="absolute top-3 left-3 z-10 flex gap-1.5">
           {screens.map((s, i) => (
             <button
@@ -103,20 +103,23 @@ export const ProjectsSection = () => (
 
       <div className="grid md:grid-cols-2 gap-6">
 
-        <ScrollReveal delay={0} className="md:col-span-2">
-          <ScreenshotCard
-            screens={DR_SCREENS}
-            title="DealerRate"
-            badge="Featured"
-            description="A full-stack car dealership review platform — buyers discover, research, and review dealerships with automatic sentiment analysis, real-time search, async reviews, helpful voting, and a dual-role user system for consumers and dealers."
-            tags={["Django", "Python", "JavaScript", "SQLite"]}
-            github="https://github.com/youssefwerrad/Dealer_Rate"
-            link="https://dealer-rate.onrender.com/"
-            featured
-          />
-        </ScrollReveal>
+        {/* DealerRate — spans both columns */}
+        <div className="md:col-span-2">
+          <ScrollReveal delay={0}>
+            <ScreenshotCard
+              screens={DR_SCREENS}
+              title="DealerRate"
+              badge="Featured"
+              description="A full-stack car dealership review platform — buyers discover, research, and review dealerships with automatic sentiment analysis, real-time search, async reviews, helpful voting, and a dual-role user system for consumers and dealers."
+              tags={["Django", "Python", "JavaScript", "SQLite"]}
+              github="https://github.com/youssefwerrad/Dealer_Rate"
+              link="https://dealer-rate.onrender.com/"
+            />
+          </ScrollReveal>
+        </div>
 
-        <ScrollReveal delay={0.08}>
+        {/* Paradise Nursery */}
+        <ScrollReveal delay={0.08} className="flex flex-col">
           <ScreenshotCard
             screens={PLANT_SCREENS}
             title="Paradise Nursery"
@@ -127,7 +130,8 @@ export const ProjectsSection = () => (
           />
         </ScrollReveal>
 
-        <ScrollReveal delay={0.16}>
+        {/* Book Nook Finder */}
+        <ScrollReveal delay={0.16} className="flex flex-col">
           <ScreenshotCard
             screens={BOOK_SCREENS}
             title="Book Nook Finder"
