@@ -20,17 +20,18 @@ const BOOK_SCREENS = [
   { label: "Detail",   img: "/screenshots/book_modal.webp",   alt: "Bookwise book detail modal" },
 ];
 
-function ScreenshotCard({ screens, title, badge, description, tags, github, link }) {
+function ScreenshotCard({ screens, title, badge, description, tags, github, link, tall = false }) {
   const [active, setActive] = useState(0);
   return (
-    <div className="group relative rounded-xl border border-border bg-card overflow-hidden transition-[box-shadow] duration-300 hover:shadow-lg hover:shadow-foreground/5 flex flex-col h-full">
-      <div className="relative border-b border-border overflow-hidden h-52">
-        <div className="absolute top-3 left-3 z-10 flex gap-1.5">
+    <div className="group rounded-xl border border-border bg-card overflow-hidden transition-[box-shadow] duration-300 hover:shadow-lg hover:shadow-foreground/5 flex flex-col">
+      {/* Screenshot */}
+      <div className={`relative border-b border-border overflow-hidden ${tall ? "h-52" : "h-40"}`}>
+        <div className="absolute top-2.5 left-2.5 z-10 flex gap-1.5">
           {screens.map((s, i) => (
             <button
               key={s.label}
               onClick={() => setActive(i)}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
+              className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
                 active === i
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "bg-background/90 text-muted-foreground hover:bg-background hover:text-foreground border border-border"
@@ -41,7 +42,7 @@ function ScreenshotCard({ screens, title, badge, description, tags, github, link
           ))}
         </div>
         {link && (
-          <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/90 border border-border text-xs text-muted-foreground">
+          <div className="absolute top-2.5 right-2.5 z-10 flex items-center gap-1 px-2 py-1 rounded-full bg-background/90 border border-border text-xs text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
             Live
           </div>
@@ -50,41 +51,46 @@ function ScreenshotCard({ screens, title, badge, description, tags, github, link
           key={active}
           src={screens[active].img}
           alt={screens[active].alt}
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
         />
       </div>
-      <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-start gap-6 flex-1">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-2">
-            <h3 className="font-semibold text-lg text-foreground">{title}</h3>
-            {badge && (
-              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-highlight-muted text-primary">
-                {badge}
-              </span>
-            )}
-          </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+
+      {/* Card body — simple vertical stack */}
+      <div className="p-5 flex flex-col gap-3">
+        {/* Title + badge */}
+        <div className="flex items-center gap-2">
+          <h3 className="font-semibold text-base text-foreground">{title}</h3>
+          {badge && (
+            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-highlight-muted text-primary">
+              {badge}
+            </span>
+          )}
         </div>
-        <div className="shrink-0">
-          <div className="flex flex-wrap gap-2 mb-4">
-            {tags.map((tag) => (
-              <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-highlight-muted text-primary">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center gap-4">
-            {github && (
-              <a href={github} className="text-muted-foreground hover:text-foreground transition-colors active:scale-95" aria-label="GitHub">
-                <Github size={18} />
-              </a>
-            )}
-            {link && (
-              <a href={link} className="text-muted-foreground hover:text-foreground transition-colors active:scale-95" aria-label="Live demo">
-                <ExternalLink size={18} />
-              </a>
-            )}
-          </div>
+
+        {/* Description */}
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-highlight-muted text-primary">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex items-center gap-3 pt-1">
+          {github && (
+            <a href={github} className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+              <Github size={16} />
+            </a>
+          )}
+          {link && (
+            <a href={link} className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Live demo">
+              <ExternalLink size={16} />
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -113,6 +119,7 @@ export const ProjectsSection = () => (
             tags={["Django", "Python", "JavaScript", "SQLite"]}
             github="https://github.com/youssefwerrad/Dealer_Rate"
             link="https://dealer-rate.onrender.com/"
+            tall
           />
         </div>
 
