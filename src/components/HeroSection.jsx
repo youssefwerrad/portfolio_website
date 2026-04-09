@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -53,12 +53,10 @@ export const HeroSection = () => {
             <ArrowDown size={16} />
           </a>
           <a
-            href="/resume.pdf"
-            download
+            href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border text-foreground font-medium text-sm hover:bg-secondary transition-[background-color,transform] duration-200 active:scale-[0.97]"
           >
-            <Download size={16} />
-            Download CV
+            Let's Connect
           </a>
         </motion.div>
       </div>
