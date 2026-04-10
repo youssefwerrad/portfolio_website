@@ -17,7 +17,6 @@ export default defineConfig(() => ({
         manualChunks: {
           "vendor-react":  ["react", "react-dom", "react-router-dom"],
           "vendor-motion": ["framer-motion"],
-          "vendor-query":  ["@tanstack/react-query"],
           "vendor-ui":     [
             "@radix-ui/react-toast",
             "@radix-ui/react-tooltip",
